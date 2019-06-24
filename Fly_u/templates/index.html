@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+	font-family: Arial;
+}
+table{
+	border-collapse: collapse;
+}
+td{
+	border:solid black;
+}
+th{
+	border:1px solid black;
+	padding:5px;
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<div>
+		search:<input type="text" placeholder="search banks"/>
+		<br /><br />
+		<table>
+			<thead>
+				<tr>
+					
+					<th>IFSC</th>
+					<th>Bank Id</th>
+					<th>Branch</th>
+					<th>Address</th>
+					<th>City</th>
+					<th>Bank Name</th>
+					<th>District</th>
+					<th>State</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in result %}
+
+						<tr>
+							<td>{{ i['ifsc'] }}</td>
+							<td>{{ i['bank_id'] }}</td>
+							<td>{{ i['branch'] }}</td>
+							<td>{{ i['address'] }}</td>
+							<td>{{ i['city'] }}</td>
+							<td>{{ i['bank_name'] }}</td>
+							<td>{{ i['district'] }}</td>
+							<td>{{ i['state'] }}</td>
+						</tr>
+					
+				{% endfor %}
+			</tbody>
+		</table>
+</body>
+</html>
